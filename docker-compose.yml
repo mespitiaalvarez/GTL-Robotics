@@ -1,0 +1,10 @@
+services:
+  ros:
+    build: .
+    container_name: create3_container
+    volumes:
+      - ./gtl_pkg:/root/create3_ws/src/gtl_pkg
+    environment:
+      - HOST_IP=host.docker.internal
+    tty: true
+    stdin_open: true
