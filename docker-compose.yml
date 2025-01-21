@@ -5,6 +5,7 @@ services:
     volumes:
       - ./gtl_pkg:/root/create3_ws/src/gtl_pkg
     environment:
-      - HOST_IP=host.docker.internal
+      # Enter your ip, followed by :0.0, below
+      - DISPLAY=10.2.0.3:0.0
     tty: true
     stdin_open: true

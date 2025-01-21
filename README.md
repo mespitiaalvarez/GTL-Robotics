@@ -54,6 +54,10 @@ docker exec -it create3_container /bin/bash
 source /opt/ros/jazzy/setup.bash
 colcon build --symlink-install
 ```
+13: Then run:
+```bash
+source ./install/local_setup.bash
+```
 
 13. Once built, test with:
 ```bash

@@ -14,6 +14,8 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
     lsb-release \
     gnupg \
     openssh-server \
+    netcat-traditional \
+    x11-apps \
     && rm -rf /var/lib/apt/lists/*
 
 # Bootstrap rosdep
@@ -58,13 +60,6 @@ RUN rosdep install --from-path src -yi
 
 # Source ROS 2
 RUN /bin/bash -c "source /opt/ros/jazzy/setup.bash"
-
-# Copy the entrypoint script into the container
-COPY entrypoint.sh /usr/local/bin/entrypoint.sh
-RUN chmod +x /usr/local/bin/entrypoint.sh
-
-# Set the entrypoint
-ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
 
 # Default command
 CMD ["bash"]
